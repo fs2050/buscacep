@@ -30,6 +30,7 @@ class ControllerSearch extends Controller
         Request $request
     ) {
         $cep = $request->input('cep');
+        
 
         $response = Http::get(url: "https://viacep.com.br/ws/$cep/json/")->json();
 

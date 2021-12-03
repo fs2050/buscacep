@@ -30,6 +30,7 @@
                     <th scope="col">CEP</th>
                     <th scope="col">Logradouro</th>
                     <th scope="col">Número</th>
+                    <th scope="col">Complemento</th>
 
                     <th scope="col">Bairro</th>
                     <th scope="col">Cidade</th>
@@ -52,6 +53,7 @@
 
                         <td>{{ $addres_s->logradouro }}</td>
                          <td>{{ $addres_s->numero }}</td>
+                         <td>{{ $addres_s->complemento }}</td>
                         <td>{{ $addres_s->bairro }}</td>
                         <td>{{ $addres_s->cidade }}</td>
                         <td>{{ $addres_s->estado }}</td>

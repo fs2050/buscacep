@@ -14,6 +14,7 @@ class Address extends Model
     protected $fillable = [
         'cep',
         'numero',
+        'complemento',
         'logradouro',
         'bairro',
         'cidade',

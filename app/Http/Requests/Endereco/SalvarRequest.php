@@ -27,6 +27,7 @@ class SalvarRequest extends FormRequest
             'cep' => 'required|string',
             'logradouro' => 'required|string',
             'numero' => 'required|string',
+            'complemento' => 'required|string',
             'bairro' => 'required|string',
             'cidade' => 'required|string',
             'estado' => 'required|string',

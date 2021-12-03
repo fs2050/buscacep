@@ -40,6 +40,10 @@
                 <input type="text" class="form-control" name="numero" >
             </div>
             <div class="form-group">
+                <label>COMPLEMENTO</label>
+                <input type="text" class="form-control" name="complemento" >
+            </div>
+            <div class="form-group">
                 <label>BAIRRO</label>
                 <input type="text" class="form-control" name="bairro" value="{{$bairro}}">
             </div>

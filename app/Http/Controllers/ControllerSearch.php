@@ -61,6 +61,7 @@ class ControllerSearch extends Controller
 
                        'logradouro' => $request->input('logradouro'),
                        'numero' => $request->input('numero'),
+                       'complemento' => $request->input('complemento'),
                        'bairro' => $request->input('bairro'),
                        'cidade' => $request->input('cidade'),
                        'estado' => $request->input('estado'),

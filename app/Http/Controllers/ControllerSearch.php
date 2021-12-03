@@ -67,9 +67,10 @@ class ControllerSearch extends Controller
                        'ddd' => $request->input('ddd')
                    ]
                );
+               return redirect('/')->withSuccess('Endereço salvo com sucesso!');
            }
             //dd($address->id);
-            return redirect('/')->withSuccess('Endereço salvo com sucesso!');
+
             return redirect('/')->withError('Endereço já está cadastrado!');
     }
 }

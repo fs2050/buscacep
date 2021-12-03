@@ -51,7 +51,7 @@
                     var script = document.createElement('script');
 
                     //Sincroniza com o callback.
-                    script.src = 'https://viacep.com.br/ws/'+ cep +'/json/?callback=meu_callback';
+                    script.src = 'https://viacep.com.br/ws/$cep/json/?callback=meu_callback';
 
                     //Insere script no documento e carrega o conteúdo.
                     document.body.appendChild(script);
@@ -63,7 +63,10 @@
                     alert("Formato de CEP inválido.");
                 }
             } //end if.
-
+            else {
+                //cep sem valor, limpa formulário.
+                limpa_formulário_cep();
+            }
         };
 
         </script>
@@ -77,7 +80,7 @@
           <form class="form-group" method="get" action="{{route('search')}}">
             <label>CEP</label>
             <input class="form-control" name="cep" type="text" id="cep" value="" size="10" maxlength="9"
-                   onblur="pesquisacep(this.value);" required/></label><br />
+                   onblur="pesquisacep(this.value);" /></label><br />
            {{--  <label>Rua:
             <input name="rua" type="text" id="rua" size="60" /></label><br />
             <label>Bairro:

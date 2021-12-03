@@ -10,7 +10,7 @@ use App\Models\Address;
 
 class ControllerSearch extends Controller
 {
-    
+
 
     public function index()
     {   $address = Address::all();
@@ -47,6 +47,12 @@ class ControllerSearch extends Controller
 
         );
     }
+
+
+
+
+
+
     public function salvar(
         SalvarRequest $request
     ) {

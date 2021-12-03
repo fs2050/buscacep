@@ -6,7 +6,16 @@
     <div class="container">
 
         <h1 class="text-center">BUSCAR CEP</h1>
+        <form action="{{route('search')}}">
+            <div class="form-group">
+                <label>CEP</label>
+                <input type="text" class="form-control" name="cep" required/>
+                <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+                onblur="pesquisacep(this.value);" /></label><br />
 
+            </div>
+            <button type="submit" class="btn btn-success">enviar</button>
+        </form>
     </div>
      <!-- Adicionando Javascript -->
      <script>
@@ -84,16 +93,22 @@
 
         <body>
         <!-- Inicio do formulario -->
-        <form action="{{route('search')}}">
-            <div class="form-group">
-                <label>CEP</label>
-                <input type="text" class="form-control" name="cep" required/>
-                <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
-                onblur="pesquisacep(this.value);" /></label><br />
+          <form method="get" action=".">
+            <label>Cep:
+            <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+                   onblur="pesquisacep(this.value);" /></label><br />
+            <label>Rua:
+            <input name="rua" type="text" id="rua" size="60" /></label><br />
+            <label>Bairro:
+            <input name="bairro" type="text" id="bairro" size="40" /></label><br />
+            <label>Cidade:
+            <input name="cidade" type="text" id="cidade" size="40" /></label><br />
+            <label>Estado:
+            <input name="uf" type="text" id="uf" size="2" /></label><br />
+            <label>IBGE:
+            <input name="ibge" type="text" id="ibge" size="8" /></label><br />
 
-            </div>
-            <button type="submit" class="btn btn-success">enviar</button>
-        </form>
+            <button type="submit" class="btn btn-success">enviar</button></form>
 
 
 

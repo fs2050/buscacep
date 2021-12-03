@@ -77,11 +77,11 @@
 
         </script>
         </head>
-        <body></body>
+        <body>
         <div class="container">
 
             <h1 class="text-center">BUSCAR CEP</h1>
-            <form method="get" action=".">
+            <form method="get" action="{{route('salvar')}}">
                 <div class="form-group">
                     <label>CEP</label>
                     {{-- <input type="text" class="form-control" name="cep" required/> --}}

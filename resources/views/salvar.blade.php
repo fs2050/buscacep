@@ -63,7 +63,7 @@
 
             <button type="submit" class="btn btn-success">salvar</button>
             <a class="btn btn-primary"href="{{route('buscar')}}">
-                Buscar Endereço Pelo CEP
+                Procurar Endereço Pelo CEP
             </a>
         </form>
     </div>

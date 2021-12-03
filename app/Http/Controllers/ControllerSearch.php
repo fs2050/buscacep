@@ -36,8 +36,8 @@ class ControllerSearch extends Controller
         return view('salvar')->with(
             [
                 'cep' => $request->input(key: 'cep'),
-
                 'logradouro' => $response['logradouro'],
+                
                 'bairro' => $response['bairro'],
                 'cidade' => $response['localidade'],
                 'estado' => $response['uf'],

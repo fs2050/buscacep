@@ -18,6 +18,7 @@ class CreateAddressTable extends Migration
             $table->string('cep');
             $table->string('logradouro');
             $table->string('numero');
+            $table->string('complemento');
             $table->string('bairro');
             $table->string('cidade');
             $table->string('estado');

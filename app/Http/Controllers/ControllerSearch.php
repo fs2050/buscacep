@@ -21,7 +21,7 @@ class ControllerSearch extends Controller
     }
 
 
-    public function adicionar()
+    public function buscar()
     {
         return view('buscar');
     }

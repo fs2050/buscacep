@@ -26,7 +26,7 @@ class ControllerSearch extends Controller
         return view('buscar');
     }
 
-    public function search(
+    public function buscar(
         Request $request
     ) {
         $cep = $request->input('cep');

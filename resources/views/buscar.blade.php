@@ -77,6 +77,7 @@
 
         </script>
         </head>
+        <body></body>
         <div class="container">
 
             <h1 class="text-center">BUSCAR CEP</h1>
@@ -91,7 +92,7 @@
                 <button type="submit" class="btn btn-success">enviar</button>
             </form>
         </div>
-
+</body>
 
 
 

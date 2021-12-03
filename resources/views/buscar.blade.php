@@ -13,7 +13,7 @@
                 document.getElementById('bairro').value=("");
                 document.getElementById('cidade').value=("");
                 document.getElementById('uf').value=("");
-                document.getElementById('ibge').value=("");
+        /*         document.getElementById('ibge').value=(""); */
         }
 
         function meu_callback(conteudo) {
@@ -23,7 +23,7 @@
                 document.getElementById('bairro').value=(conteudo.bairro);
                 document.getElementById('cidade').value=(conteudo.localidade);
                 document.getElementById('uf').value=(conteudo.uf);
-                document.getElementById('ibge').value=(conteudo.ibge);
+             /*    document.getElementById('ibge').value=(conteudo.ibge); */
             } //end if.
             else {
                 //CEP não Encontrado.
@@ -90,14 +90,14 @@
             <label>Estado:
             <input name="uf" type="text" id="uf" size="2" /></label><br />
             <label>IBGE:
-            <input name="ibge" type="text" id="ibge" size="8" /></label><br />
+          {{--   <input name="ibge" type="text" id="ibge" size="8" /></label><br /> --}}
 
             <button type="submit" class="btn btn-success">enviar</button></form>
 
             </div>
         </body>
 
-                  
+
 
 
 @endsection

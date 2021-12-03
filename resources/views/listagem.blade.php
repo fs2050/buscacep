@@ -7,7 +7,7 @@
 
         <h1 class="text-center">ENDEREÇOS CADASTRADOS</h1>
 
-        <a class="btn btn-primary"href="{{route('adicionar')}}">
+        <a class="btn btn-primary"href="{{route('buscar')}}">
             Adicionar CEP
         </a>
 

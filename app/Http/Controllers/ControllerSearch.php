@@ -66,7 +66,7 @@ class ControllerSearch extends Controller
         SalvarRequest $request
     ) {
         //dd($request->all());
-        $address = Address::where('$cep', $request->input('$cep'))->first();
+        $address = Address::where('cep', $request->input('$cep'))->first();
 
 
         $address = Address::create(

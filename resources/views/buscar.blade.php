@@ -92,7 +92,7 @@
             <label>IBGE: --}}
           {{--   <input name="ibge" type="text" id="ibge" size="8" /></label><br /> --}}
 
-            <button type="submit" class="btn btn-success">enviar</button></form>
+            <button type="submit" class="btn btn-success">Fazer Busca</button></form>
 
             </div>
         </body>

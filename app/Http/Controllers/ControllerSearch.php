@@ -6,7 +6,7 @@ use App\Http\Requests\Endereco\SalvarRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\Models\Address;
-
+use Illuminate\Validation\Rules\Exists;
 
 class ControllerSearch extends Controller
 {
@@ -30,9 +30,11 @@ class ControllerSearch extends Controller
         Request $request
     ) {
         $cep = $request->input('cep');
-        
+
 
         $response = Http::get(url: "https://viacep.com.br/ws/$cep/json/")->json();
+
+
 
         return view('salvar')->with(
             [

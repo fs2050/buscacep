@@ -15,6 +15,10 @@ use App\Http\Controllers\ControllerSearch;
 |
 */
 
+Route::fallback(function () {
+    echo 'A rota acessada não existe. <a href="' . route('index') . '"> Voltar a Home</a>';
+});
+
 Route::get('/', [ControllerSearch::class, 'index'])->name('index');
 
 

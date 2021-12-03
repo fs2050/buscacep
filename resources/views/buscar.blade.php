@@ -3,7 +3,7 @@
 @section('content')
 
   <body>
-    
+
      <!-- Adicionando Javascript -->
      <script>
 
@@ -74,6 +74,9 @@
 
         <body>
         <!-- Inicio do formulario -->
+        <div class="container">
+
+            <h1 class="text-center">BUSCAR CEP</h1>
           <form method="get" action="{{route('search')}}">
             <label>Cep:
             <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
@@ -91,6 +94,10 @@
 
             <button type="submit" class="btn btn-success">enviar</button></form>
 
+            </div>
+        </body>
+
+                  
 
 
 @endsection

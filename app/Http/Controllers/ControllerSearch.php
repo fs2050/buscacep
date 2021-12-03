@@ -50,7 +50,7 @@ class ControllerSearch extends Controller
         SalvarRequest $request
     ) {
         //dd($request->all());
-        $address = Address::where('numero && complemento', $request->input(key: 'numero && complemento'))->first();
+        $address = Address::where('numero', $request->input(key: 'numero'))->first();
 
 
 

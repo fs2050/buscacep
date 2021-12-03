@@ -9,8 +9,8 @@
 
         function limpa_formulário_cep() {
                 //Limpa valores do formulário de cep.
-             /*    document.getElementById('rua').value=("");
-                document.getElementById('bairro').value=("");
+                document.getElementById('cep').value=("");
+              /*   document.getElementById('bairro').value=("");
                 document.getElementById('cidade').value=("");
                 document.getElementById('uf').value=(""); */
         /*         document.getElementById('ibge').value=(""); */
@@ -19,8 +19,8 @@
         function meu_callback(conteudo) {
             if (!("erro" in conteudo)) {
                 //Atualiza os campos com os valores.
-            /*     document.getElementById('rua').value=(conteudo.logradouro);
-                document.getElementById('bairro').value=(conteudo.bairro);
+                document.getElementById('cep').value=(conteudo.cep);
+             /*    document.getElementById('bairro').value=(conteudo.bairro);
                 document.getElementById('cidade').value=(conteudo.localidade);
                 document.getElementById('uf').value=(conteudo.uf); */
              /*    document.getElementById('ibge').value=(conteudo.ibge); */
@@ -80,7 +80,7 @@
           <form class="form-group" method="get" action="{{route('search')}}">
             <label>CEP</label>
             <input class="form-control" name="cep" type="text" id="cep" value="" size="10" maxlength="9"
-                   onblur="pesquisacep(this.value);" /></label><br />
+                   onblur="pesquisacep(this.value);" required /></label><br />
            {{--  <label>Rua:
             <input name="rua" type="text" id="rua" size="60" /></label><br />
             <label>Bairro:

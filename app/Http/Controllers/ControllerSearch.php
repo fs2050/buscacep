@@ -37,12 +37,8 @@ class ControllerSearch extends Controller
 
         $response = Http::get(url: "https://viacep.com.br/ws/$cep/json/")->json();
 
-        if ($cep=!$cep) {
+        if ($cep) {
 
-            return redirect('/')->withError('Cep não existe');
-
-        } //end if.
-        else {
             return view('salvar')->with(
                 [
                     'cep' => $request->input(key: 'cep'),
@@ -55,6 +51,11 @@ class ControllerSearch extends Controller
                 ]
 
             );
+        } //end if.
+        else {
+
+
+            return redirect('/adicionar')->withError('Endereço já está cadastrado!');
         }
     }
 

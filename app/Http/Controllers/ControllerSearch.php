@@ -39,7 +39,7 @@ class ControllerSearch extends Controller
 
         if ($cep) {
 
-            return redirect('/')->withError('Cep não existe');
+            return redirect('/adicionar')->withError('Cep não existe');
 
         } //end if.
         else {

@@ -20,14 +20,7 @@
      <!-- Adicionando Javascript -->
      <script>
 
-        function limpa_formulário_cep() {
-                //Limpa valores do formulário de cep.
-                document.getElementById('rua').value=("");
-                document.getElementById('bairro').value=("");
-                document.getElementById('cidade').value=("");
-                document.getElementById('uf').value=("");
-                document.getElementById('ibge').value=("");
-        }
+
 
         function meu_callback(conteudo) {
             if (!("erro" in conteudo)) {
@@ -76,10 +69,7 @@
                     alert("Formato de CEP inválido.");
                 }
             } //end if.
-            else {
-                //cep sem valor, limpa formulário.
-                limpa_formulário_cep();
-            }
+           
         };
 
         </script>
@@ -91,7 +81,7 @@
             <label>Cep:
             <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
                    onblur="pesquisacep(this.value);" /></label><br />
-           
+
 
             <button type="submit" class="btn btn-success">enviar</button></form>
 

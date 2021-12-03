@@ -70,7 +70,7 @@ class ControllerSearch extends Controller
 
 
         if (!$address){
-            $address = Address::create(
+         Address::create(
                 [
                     'cep' => $request->input('cep'),
 

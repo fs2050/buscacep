@@ -39,6 +39,10 @@ class ControllerSearch extends Controller
 
         if (!$cep) {
 
+            return redirect('/')->withError('Cep não existe');
+
+        } //end if.
+        else {
             return view('salvar')->with(
                 [
                     'cep' => $request->input(key: 'cep'),
@@ -51,11 +55,6 @@ class ControllerSearch extends Controller
                 ]
 
             );
-        } //end if.
-        else {
-
-
-        ("CEP não encontrado.");
         }
     }
 

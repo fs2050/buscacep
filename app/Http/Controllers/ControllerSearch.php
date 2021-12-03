@@ -37,7 +37,7 @@ class ControllerSearch extends Controller
             [
                 'cep' => $request->input(key: 'cep'),
                 'logradouro' => $response['logradouro'],
-                
+
                 'bairro' => $response['bairro'],
                 'cidade' => $response['localidade'],
                 'estado' => $response['uf'],
@@ -50,7 +50,7 @@ class ControllerSearch extends Controller
         SalvarRequest $request
     ) {
         //dd($request->all());
-        $address = Address::where('cep', $request->input(key: 'cep'))->first();
+        $address = Address::where('numero', $request->input(key: 'numero'))->first();
 
 
 
@@ -65,7 +65,7 @@ class ControllerSearch extends Controller
                        'bairro' => $request->input('bairro'),
                        'cidade' => $request->input('cidade'),
                        'estado' => $request->input('estado'),
-                       'ddd' => $request->input('ddd')
+                       'ddd' => $request->input('ddd'),
                    ]
                );
                return redirect('/')->withSuccess('Endereço salvo com sucesso!');

@@ -6,14 +6,13 @@ use App\Http\Requests\Endereco\SalvarRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\Models\Address;
-use Illuminate\Validation\Rules\Exists;
+
 
 class ControllerSearch extends Controller
 {
 
     public function index()
-    {
-        $address = Address::all();
+    {   $address = Address::all();
         return view('listagem')->with(
             [
                 'address' => $address,
@@ -32,36 +31,21 @@ class ControllerSearch extends Controller
     ) {
         $cep = $request->input('cep');
 
-
-
-
         $response = Http::get(url: "https://viacep.com.br/ws/$cep/json/")->json();
 
-        if ($cep) {
+        return view('salvar')->with(
+            [
+                'cep' => $request->input(key: 'cep'),
 
-            return view('salvar')->with(
-                [
-                    'cep' => $request->input(key: 'cep'),
+                'logradouro' => $response['logradouro'],
+                'bairro' => $response['bairro'],
+                'cidade' => $response['localidade'],
+                'estado' => $response['uf'],
+                'ddd' => $response['ddd']
+            ]
 
-                    'logradouro' => $response['logradouro'],
-                    'bairro' => $response['bairro'],
-                    'cidade' => $response['localidade'],
-                    'estado' => $response['uf'],
-                    'ddd' => $response['ddd']
-                ]
-
-            );
-        } //end if.
-        else {
-
-
-            return redirect('/adicionar')->withError('Endereço já está cadastrado!');
-        }
+        );
     }
-
-
-
-
     public function salvar(
         SalvarRequest $request
     ) {
@@ -69,22 +53,23 @@ class ControllerSearch extends Controller
         $address = Address::where('cep', $request->input('cep'))->first();
 
 
-        if (!$address){
-         Address::create(
-                [
-                    'cep' => $request->input('cep'),
 
-                    'logradouro' => $request->input('logradouro'),
-                    'numero' => $request->input('numero'),
-                    'bairro' => $request->input('bairro'),
-                    'cidade' => $request->input('cidade'),
-                    'estado' => $request->input('estado'),
-                    'ddd' => $request->input('ddd')
-                ]
-            );
-        }
-        //dd($address->id);
-        return redirect('/')->withSuccess('Endereço salvo com sucesso!');
-        return redirect('/')->withError('Endereço já está cadastrado!');
+        if (!$address){
+            Address::create(
+                   [
+                       'cep' => $request->input('cep'),
+
+                       'logradouro' => $request->input('logradouro'),
+                       'numero' => $request->input('numero'),
+                       'bairro' => $request->input('bairro'),
+                       'cidade' => $request->input('cidade'),
+                       'estado' => $request->input('estado'),
+                       'ddd' => $request->input('ddd')
+                   ]
+               );
+           }
+            //dd($address->id);
+            return redirect('/')->withSuccess('Endereço salvo com sucesso!');
+            return redirect('/')->withError('Endereço já está cadastrado!');
     }
 }

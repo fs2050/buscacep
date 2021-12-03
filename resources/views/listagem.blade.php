@@ -8,7 +8,7 @@
         <h1 class="text-center">ENDEREÇOS CADASTRADOS</h1>
 
         <a class="btn btn-primary"href="{{route('buscar')}}">
-            Adicionar CEP
+            Buscar Endereço Pelo CEP
         </a>
 
         @if(session('success'))

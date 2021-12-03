@@ -37,9 +37,9 @@ class ControllerSearch extends Controller
 
         $response = Http::get(url: "https://viacep.com.br/ws/$cep/json/")->json();
 
-        if (!($cep)) {
+        if ($cep=!$cep) {
 
-            return redirect('/adicionar')->withError('Cep não existe');
+            return redirect('/')->withError('Cep não existe');
 
         } //end if.
         else {

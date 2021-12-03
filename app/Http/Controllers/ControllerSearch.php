@@ -58,6 +58,7 @@ class ControllerSearch extends Controller
     ) {
         //dd($request->all());
         $address = Address::where('numero', $request->input(key: 'numero'))->first();
+        $address = Address::where('complemento', $request->input(key: 'complemento'))->first();
 
 
 

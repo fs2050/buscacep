@@ -9,9 +9,7 @@
         <form action="{{route('search')}}">
             <div class="form-group">
                 <label>CEP</label>
-        {{--         <input type="text" class="form-control" name="cep" required/> --}}
-                <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
-                onblur="pesquisacep(this.value);" /></label><br />
+                <input type="text" class="form-control" name="cep" required/>
             </div>
             <button type="submit" class="btn btn-success">enviar</button>
         </form>

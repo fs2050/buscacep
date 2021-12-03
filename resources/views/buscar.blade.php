@@ -93,11 +93,11 @@
 
         <body>
         <!-- Inicio do formulario -->
-          <form method="get" action="{{route('salvar')}}">
+          <form method="get" action="{{route('search')}}">
             <label>Cep:
             <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
                    onblur="pesquisacep(this.value);" /></label><br />
-            
+
 
             <button type="submit" class="btn btn-success">enviar</button></form>
 

@@ -19,7 +19,7 @@ use App\Http\Controllers\ControllerSearch;
 Route::get('/', [ControllerSearch::class, 'index'])->name('index');
 
 
-Route::get('/adicionar', [ControllerSearch::class, 'adicionar'])->name('buscar');
+Route::get('/buscar', [ControllerSearch::class, 'adicionar'])->name('buscar');
 
 
 

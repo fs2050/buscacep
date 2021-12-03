@@ -63,7 +63,7 @@
                     alert("Formato de CEP inválido.");
                 }
             } //end if.
-         
+
         };
 
         </script>
@@ -77,7 +77,7 @@
           <form class="form-group" method="get" action="{{route('search')}}">
             <label>CEP</label>
             <input class="form-control" name="cep" type="text" id="cep" value="" size="10" maxlength="9"
-                   onblur="pesquisacep(this.value);" /></label><br />
+                   onblur="pesquisacep(this.value);" required/></label><br />
            {{--  <label>Rua:
             <input name="rua" type="text" id="rua" size="60" /></label><br />
             <label>Bairro:

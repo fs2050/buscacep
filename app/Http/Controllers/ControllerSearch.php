@@ -66,21 +66,23 @@ class ControllerSearch extends Controller
         SalvarRequest $request
     ) {
         //dd($request->all());
-        $address = Address::where('cep', $request->input('$cep'))->first();
+        $address = Address::where('cep', $request->input('cep'))->first();
 
 
-        $address = Address::create(
-            [
-                'cep' => $request->input('cep'),
+        if (!$address){
+            $address = Address::create(
+                [
+                    'cep' => $request->input('cep'),
 
-                'logradouro' => $request->input('logradouro'),
-                'numero' => $request->input('numero'),
-                'bairro' => $request->input('bairro'),
-                'cidade' => $request->input('cidade'),
-                'estado' => $request->input('estado'),
-                'ddd' => $request->input('ddd')
-            ]
-        );
+                    'logradouro' => $request->input('logradouro'),
+                    'numero' => $request->input('numero'),
+                    'bairro' => $request->input('bairro'),
+                    'cidade' => $request->input('cidade'),
+                    'estado' => $request->input('estado'),
+                    'ddd' => $request->input('ddd')
+                ]
+            );
+        }
         //dd($address->id);
         return redirect('/')->withSuccess('Endereço salvo com sucesso!');
         return redirect('/')->withError('Endereço já está cadastrado!');

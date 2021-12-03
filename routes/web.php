@@ -15,9 +15,6 @@ use App\Http\Controllers\ControllerSearch;
 |
 */
 
-Route::fallback(function () {
-    echo 'A rota acessada não existe. <a href="' . route('index') . '"> Voltar a Home</a>';
-});
 
 Route::get('/', [ControllerSearch::class, 'index'])->name('index');
 
@@ -30,3 +27,7 @@ Route::get('/search', [ControllerSearch::class, 'search'])->name('search');
 
 
 Route::post('/salvar', [ControllerSearch::class, 'salvar'])->name('salvar');
+
+Route::fallback(function () {
+    echo 'A página acessada não existe. <a href="' . route('index') . '"> Voltar a Home</a>';
+});

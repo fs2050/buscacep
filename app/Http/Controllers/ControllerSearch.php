@@ -12,7 +12,8 @@ class ControllerSearch extends Controller
 {
 
     public function index()
-    {   $address = Address::all();
+    {
+        $address = Address::all();
         return view('listagem')->with(
             [
                 'address' => $address,
@@ -32,23 +33,35 @@ class ControllerSearch extends Controller
         $cep = $request->input('cep');
 
 
+
+
         $response = Http::get(url: "https://viacep.com.br/ws/$cep/json/")->json();
 
+        if ($cep) {
+
+            return view('salvar')->with(
+                [
+                    'cep' => $request->input(key: 'cep'),
+
+                    'logradouro' => $response['logradouro'],
+                    'bairro' => $response['bairro'],
+                    'cidade' => $response['localidade'],
+                    'estado' => $response['uf'],
+                    'ddd' => $response['ddd']
+                ]
+
+            );
+        } //end if.
+        else {
 
 
-        return view('salvar')->with(
-            [
-                'cep' => $request->input(key: 'cep'),
-
-                'logradouro' => $response['logradouro'],
-                'bairro' => $response['bairro'],
-                'cidade' => $response['localidade'],
-                'estado' => $response['uf'],
-                'ddd' => $response['ddd']
-            ]
-
-        );
+        ("CEP não encontrado.");
+        }
     }
+
+
+
+
     public function salvar(
         SalvarRequest $request
     ) {
@@ -67,9 +80,9 @@ class ControllerSearch extends Controller
                 'estado' => $request->input('estado'),
                 'ddd' => $request->input('ddd')
             ]
-            );
-            //dd($address->id);
-            return redirect('/')->withSuccess('Endereço salvo com sucesso!');
-            return redirect('/')->withError('Endereço já está cadastrado!');
+        );
+        //dd($address->id);
+        return redirect('/')->withSuccess('Endereço salvo com sucesso!');
+        return redirect('/')->withError('Endereço já está cadastrado!');
     }
 }

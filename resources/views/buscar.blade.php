@@ -77,9 +77,9 @@
         <div class="container">
 
             <h1 class="text-center">BUSCAR CEP</h1>
-          <form method="get" action="{{route('search')}}">
-            <label>Cep:
-            <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+          <form class="form-group" method="get" action="{{route('search')}}">
+            <label>CEP</label>
+            <input class="form-control" name="cep" type="text" id="cep" value="" size="10" maxlength="9"
                    onblur="pesquisacep(this.value);" /></label><br />
            {{--  <label>Rua:
             <input name="rua" type="text" id="rua" size="60" /></label><br />
@@ -96,7 +96,7 @@
 
             </div>
         </body>
-
+     
 
 
 

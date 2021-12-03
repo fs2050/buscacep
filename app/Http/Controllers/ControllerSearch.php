@@ -37,7 +37,7 @@ class ControllerSearch extends Controller
 
         $response = Http::get(url: "https://viacep.com.br/ws/$cep/json/")->json();
 
-        if (function_exists($cep)) {
+        if (function_exists(!$cep)) {
 
             return view('salvar')->with(
                 [

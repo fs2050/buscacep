@@ -94,7 +94,7 @@
 
             <button type="submit" class="btn btn-success">Fazer Busca</button></form>
             <a class="btn btn-primary"href="{{route('buscar')}}">
-                Procurar Endereço Pelo CEP
+                Lista d endereços cadastrados
             </a>
             </div>
         </body>

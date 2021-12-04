@@ -9,7 +9,7 @@
 
         function limpa_formulário_cep() {
                 //Limpa valores do formulário de cep.
-                document.getElementById('cep').value=("");
+                document.getElementById'cep'().value=("");
               /*   document.getElementById('bairro').value=("");
                 document.getElementById('cidade').value=("");
                 document.getElementById('uf').value=(""); */
@@ -93,7 +93,9 @@
           {{--   <input name="ibge" type="text" id="ibge" size="8" /></label><br /> --}}
 
             <button type="submit" class="btn btn-success">Fazer Busca</button></form>
-
+            <a class="btn btn-primary"href="{{route('buscar')}}">
+                Procurar Endereço Pelo CEP
+            </a>
             </div>
         </body>
 

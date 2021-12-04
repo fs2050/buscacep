@@ -94,7 +94,7 @@
 
             <button type="submit" class="btn btn-success">Fazer Busca</button></form>
             <a class="btn btn-primary"href="{{route('buscar')}}">
-                Lista d endereços cadastrados
+                Lista de endereços cadastrados
             </a>
             </div>
         </body>
